@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-frei <vde-frei@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/12 09:38:39 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/07/12 11:02:18 by vde-frei         ###   ########.fr       */
+/*   Created: 2023/07/12 10:48:18 by vde-frei          #+#    #+#             */
+/*   Updated: 2023/07/12 11:13:49 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_strdup(char *src)
+int	*ft_range(int min, int max)
 {
-	int	i;
-	int	len;
-	char	*str;
+	int	*numbers;
+	int	counter;
+	
+	if (min >= max)
+		return ((void *) 0);
+	numbers = (int *)malloc(sizeof(int) * (max));
+	counter = 0;
+	while (min != (max - 1))
+		numbers[counter++] = min++;
+	return (numbers);
+}
+#include <stdio.h>
 
-	len = 0;
-	while (src[len])
-		len++;
-	str = (char *)malloc(sizeof(char) * len + 1);
-	i = 0;
-	while (i < len)
+int	main(void)
+{
+	int	numbers = *ft_range(10, 30);
+
+	for(int i = 10; i < 30; i++)
 	{
-		str[i] = src[i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
+		printf("%d, ", numbers++);
+	}	
+	return (0);
 }

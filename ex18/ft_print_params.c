@@ -6,18 +6,18 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 19:15:36 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/07/11 20:15:48 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/07/12 11:01:15 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-int main (int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	int	i;
-	int j;
-	(void)argc;
+	int	j;
 
+	(void)argc;
 	j = 1;
 	while (argv[j])
 	{
