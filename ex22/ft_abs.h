@@ -6,13 +6,13 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:54:36 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/07/12 17:59:52 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/07/17 17:52:29 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_ABS_H
 # define FT_ABS_H
 
-#define ABS(Value) Value > 0 ? Value : -Value
+# define ABS(Value) Value > 0 ? Value : -Value
 
 #endif

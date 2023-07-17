@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 09:38:39 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/07/12 11:02:18 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/07/17 17:22:20 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strdup(char *src)
 {
-	int	i;
-	int	len;
+	int		i;
+	int		len;
 	char	*str;
 
 	len = 0;

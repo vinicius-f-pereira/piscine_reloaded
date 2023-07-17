@@ -6,64 +6,73 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:16:45 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/07/13 21:06:14 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/07/17 18:46:09 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
 
 void	ft_putchar(char c);
-
-void	ft_putstr(char *str)
-{
-	while (*str)
-		ft_putchar(*str++);
-	ft_putchar('\n');
-}
-
-int	ft_strcmp(char *s, char*s1)
-{
-	while (*s == *s1 && *s1)
-	{
-		++s;
-		++s1;
-	}
-	return (*s - *s1);
-}
-
-void	ft_swap(char **p, char**p1)
-{
-	char	*tmp;
-
-	tmp = *p;
-	*p = *p1;
-	*p1 = tmp;
-}
-
-void	ft_sort(char **argv, int args)
-{
-	int	j;
-	int	k;
-	int	len;
-
-	len = args;
-	while (len - 1)
-	{
-		j = 0;
-		k = 1;
-		while (k < len)
-		{
-			if (ft_strcmp(argv[j], argv[k]) > 0)
-				ft_swap(&argv[j], &argv[k]);
-			++j;
-			++k;
-		}
-		--len;
-	}
-}
+void	ft_putstr(char *str);
+void	ft_print_params(char *params[], int params_size);
+int		ft_strcmp(char *s1, char *s2);
+void	ft_sort_strings(char *params[]);
 
 int	main(int argc, char *argv[])
 {
-	ft_sort(argv + 1, argc - 1);
-	while (*(++argv))
-		ft_putstr(*argv);
+	if (argc > 0)
+		ft_print_params(argv, argc);
 	return (0);
+}
+
+void	ft_print_params(char *params[], int params_size)
+{
+	int	i;
+
+	i = 1;
+	ft_sort_strings(params);
+	while (i < params_size)
+	{
+		ft_putstr(params[i++]);
+		ft_putstr("\n");
+	}
+}
+
+void	ft_putstr(char *str)
+{
+	while (*str != '\0')
+		ft_putchar(*str++);
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	while ((*s1 == *s2) && (*s1 != '\0' && *s2 != '\0'))
+	{
+		s1++;
+		s2++;
+	}
+	return ((unsigned int)*s1 - (unsigned int)*s2);
+}
+
+void	ft_sort_strings(char *strings[])
+{
+	char	*temp;
+	int		i;
+	int		j;
+
+	i = 1;
+	while (strings[i])
+	{
+		j = i + 1;
+		while (strings[j])
+		{
+			if (ft_strcmp(strings[i], strings[j]) > 0)
+			{
+				temp = strings[i];
+				strings[i] = strings[j];
+				strings[j] = temp;
+			}
+			j++;
+		}
+		i++;
+	}
 }
