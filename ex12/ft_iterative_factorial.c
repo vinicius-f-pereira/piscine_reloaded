@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 09:52:08 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/07/11 11:11:05 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/07/17 18:14:27 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_iterative_factorial(int nb)
 
 	i = 1;
 	factorial = 1;
-	if (nb < 0)
+	if (nb < 0 || nb > 12)
 		return (0);
 	while (i <= nb)
 		factorial = factorial * i++;
