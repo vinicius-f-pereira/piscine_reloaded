@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: nivicius <nivicius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 19:15:36 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/07/12 11:01:15 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/12/07 02:10:45 by nivicius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,13 @@ int	main(int argc, char *argv[])
 	int	j;
 
 	(void)argc;
-	j = 1;
-	while (argv[j])
+	j = 0;
+	while (argv[++j])
 	{
 		i = 0;
 		while (argv[j][i])
-		{
-			ft_putchar(argv[j][i]);
-			++i;
-		}
+			ft_putchar(argv[j][i++]);
 		ft_putchar('\n');
-		++j;
 	}
 	return (0);
 }

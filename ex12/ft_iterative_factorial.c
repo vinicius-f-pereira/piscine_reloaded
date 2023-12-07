@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: nivicius <nivicius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 09:52:08 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/07/17 18:14:27 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/12/07 02:08:00 by nivicius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,4 @@ int	ft_iterative_factorial(int nb)
 	while (i <= nb)
 		factorial = factorial * i++;
 	return (factorial);
-	return (0);
 }

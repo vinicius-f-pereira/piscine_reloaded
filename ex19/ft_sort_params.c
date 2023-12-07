@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_params.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: nivicius <nivicius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:16:45 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/07/17 18:46:09 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/12/07 02:11:56 by nivicius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+
 
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
@@ -59,11 +59,11 @@ void	ft_sort_strings(char *strings[])
 	int		i;
 	int		j;
 
-	i = 1;
-	while (strings[i])
+	i = 0;
+	while (strings[i++])
 	{
-		j = i + 1;
-		while (strings[j])
+		j = i;
+		while (strings[j++])
 		{
 			if (ft_strcmp(strings[i], strings[j]) > 0)
 			{
@@ -71,8 +71,6 @@ void	ft_sort_strings(char *strings[])
 				strings[i] = strings[j];
 				strings[j] = temp;
 			}
-			j++;
 		}
-		i++;
 	}
 }

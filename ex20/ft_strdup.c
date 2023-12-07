@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vde-frei <vde-frei@student.42sp.org.b      +#+  +:+       +#+        */
+/*   By: nivicius <nivicius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 09:38:39 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/07/17 17:22:20 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/12/07 02:12:32 by nivicius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,9 @@ char	*ft_strdup(char *src)
 	while (src[len])
 		len++;
 	str = (char *)malloc(sizeof(char) * len + 1);
-	i = 0;
-	while (i < len)
-	{
+	i = -1;
+	while (++i < len)
 		str[i] = src[i];
-		i++;
-	}
 	str[i] = '\0';
 	return (str);
 }
